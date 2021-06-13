@@ -505,7 +505,7 @@ svg:hover #dark1 {
   align-items: center;
   justify-content: left;
   margin-left: 50px;
-  margin-top: 150px;
+  margin-top: 75px;
 }
 
 .about-para {
@@ -662,6 +662,7 @@ svg:hover #dark1 {
   color: white;
   margin: 10px 0;
   text-transform: uppercase;
+  width: 100%;
 }
 
 .project-separator {
