@@ -1,3 +1,5 @@
+
+
 let menuOpened = false;
 let isMobile = false;
 
@@ -99,7 +101,7 @@ function initializeTag(){
             reverse: true,
             depth: 0.7,
             maxSpeed: 0.08,
-            textHeight: 32,
+            textHeight: 16,
             outlineMethod: 'none',
             radiusX: 0.8,
             radiusY: 0.8,
@@ -166,6 +168,16 @@ window.onload = function() {
             behavior: "smooth"
         });
     })
+
+    let imageContainers = document.querySelectorAll('.image-container')
+    for(let i =0;i<imageContainers.length;i++){
+        let overlay = imageContainers[i].querySelector('.overlay')
+        let params = imageContainers[i].querySelector('.project-image').getBoundingClientRect()
+        let offsetLeft = params.x - imageContainers[i].getBoundingClientRect().x
+        overlay.style.height = params.height + "px"
+        overlay.style.width = params.width + "px"
+        overlay.style.left = offsetLeft + "px"
+    }
 };
 
 function generateGradient(){
@@ -201,6 +213,16 @@ window.addEventListener('resize', () =>
         elems[i].style.width = properWidth + "px"
     }
     document.getElementById('bottom-bar').style.width =properWidth + "px"
+
+    let imageContainers = document.querySelectorAll('.image-container')
+    for(let i =0;i<imageContainers.length;i++){
+        let overlay = imageContainers[i].querySelector('.overlay')
+        let params = imageContainers[i].querySelector('.project-image').getBoundingClientRect()
+        let offsetLeft = params.x - imageContainers[i].getBoundingClientRect().x
+        overlay.style.height = params.height + "px"
+        overlay.style.width = params.width + "px"
+        overlay.style.left = offsetLeft + "px"
+    }
 })
 
 
@@ -215,7 +237,7 @@ let skillBarTimeline = gsap.timeline({
     }
   })
   .call(checkIfScrolled)
-  .from(".progress", { width: 0 , duration: 2});
+  .from(".progress", { width: '0%' , duration: 1, onComplete: resetStyles});
 
 let hasScrolled = false;
 function checkIfScrolled() {
@@ -231,7 +253,10 @@ function startAnims() {
   }
   window.addEventListener("scroll", startAnims);
 
+function resetStyles(){
+    let elems = document.querySelectorAll('.progress')
+    for(let i = 0;i<elems.length;i++){
+        elems[i].style.removeProperty('width')
+    }
+}
 
-
-//   social-ape: https://socialape-2e522.firebaseapp.com/login
-// scrabble: https://play.google.com/store/apps/details?id=com.coffeecoder.scrabblehelper
