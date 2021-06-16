@@ -721,11 +721,13 @@ svg:hover #dark1 {
 
 input:-webkit-autofill {
   -webkit-box-shadow: 0 0 0 50px #535a63 inset; /* Change the color to your own background color */
+  box-shadow: 0 0 0 50px #535a63 inset; /* Change the color to your own background color */
   -webkit-text-fill-color: white;
 }
 
 input:-webkit-autofill:focus {
   -webkit-box-shadow: 0 0 0 50px #535a63 inset; /*your box-shadow*/
+  box-shadow: 0 0 0 50px #535a63 inset; /*your box-shadow*/
   -webkit-text-fill-color: white f;
 }
 
@@ -782,6 +784,24 @@ input:-webkit-autofill:focus {
 
 .back:hover {
   opacity: 0.8;
+}
+
+#submitButton {
+  background: none;
+  border: none;
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+  cursor: pointer;
+  letter-spacing: 0.1em;
+}
+
+.submit-text {
+  padding: 5px;
+  color: white;
+  background-color: green;
+  display: none;
+  opacity: 0;
 }
 
 @media screen and (max-width: 1000px) {

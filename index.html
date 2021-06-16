@@ -452,15 +452,19 @@
         </div>
       </div>
       <div class="section-container">
-        <form id="contact-form">
+        <form id="contact-form" action="" method="POST">
           <div class="input-row">
             <input
+              id="name"
+              name="name"
               class="form-input"
               placeholder="Name"
               style="margin-right: 7px"
               required
             />
             <input
+              id="email"
+              name="email"
               class="form-input"
               placeholder="Email"
               style="margin-left: 7.5px"
@@ -468,15 +472,28 @@
             />
           </div>
           <div class="input-row">
-            <input class="form-input" placeholder="Subject" required />
+            <input
+              id="subject"
+              name="subject"
+              class="form-input"
+              placeholder="Subject"
+              autocomplete="off"
+              required
+            />
           </div>
           <div class="input-row">
             <textarea
+              autocomplete="off"
+              name="message"
+              id="form-message"
               class="form-input"
               placeholder="Message"
               rows="5"
               required
             ></textarea>
+          </div>
+          <div id="submit-text" class="submit-text">
+            Thank you for your message! I will get back to you soon!
           </div>
           <div
             class="contact-button"
@@ -487,7 +504,7 @@
               <span></span>
               <span></span>
               <span></span>
-              Contact Me
+              <button type="submit" id="submitButton">Contact Me</button>
             </div>
           </div>
         </form>

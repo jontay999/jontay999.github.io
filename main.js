@@ -1,5 +1,4 @@
 
-
 let menuOpened = false;
 let isMobile = false;
 
@@ -147,13 +146,24 @@ window.onload = function() {
     })
 
     document.getElementById('contact-form').addEventListener('submit', (e) => {
-        return false
+        e.preventDefault()
+        let name = document.getElementById('name').value
+        let email = document.getElementById('email').value
+        let subject = document.getElementById('subject').value
+        let message = document.getElementById('form-message').value
+
+        let link = document.createElement('a')
+        link.href = `mailto:coffeecoder05@gmail.com?subject=${subject}&body=${message}`
+        link.click()
+        Element.remove(link)
+        
+        document.getElementById('submit-text').style.display = "block"
+        document.getElementById('submit-text').style.opacity = "1"
+        setTimeout(function(){document.getElementById('submit-text').style.display="none";document.getElementById('submit-text').style.opacity="0"}, 3000)
+
     })
 
-    document.getElementById('submit-contact').addEventListener('click', () => {
-        let form = document.getElementById('contact-form')
-        form.submit()
-    })
+
 
     document.getElementById('main-icon').addEventListener('click', () => {
         scroll({
