@@ -110,7 +110,8 @@ function initializeTag(){
             minBårightness: 0.05,
             shadowBlur: 4,
             shadowOffset: [2,2],
-            textFont: "Poppins"
+            textFont: "Poppins",
+            initial: [0.1,-0.1]
 
         });
     } catch(e) {
